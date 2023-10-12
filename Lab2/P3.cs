@@ -21,7 +21,8 @@ namespace Lab2
             do
             {
                 Console.Write("Enter your guess: ");
-                guess = Convert.ToInt32(Console.ReadLine());
+                string input = Console.ReadLine();
+                guess = Convert.ToInt32(input);
                 attempts++;
 
                 if (guess < target)

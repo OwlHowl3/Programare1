@@ -12,13 +12,16 @@ namespace Lab2
         public static void solver()
         {
             Console.Write("Enter first number: ");
-            double num1 = Convert.ToDouble(Console.ReadLine());
+            string input1 = Console.ReadLine();
+            double num1 = Convert.ToDouble(input1);
 
             Console.Write("Enter an operator (+, -, *, /): ");
-            char op = Convert.ToChar(Console.ReadLine());
+            string input2 = Console.ReadLine();
+            char op = Convert.ToChar(input2);
 
             Console.Write("Enter second number: ");
-            double num2 = Convert.ToDouble(Console.ReadLine());
+            string input3 = Console.ReadLine();
+            double num2 = Convert.ToDouble(input3);
 
             double result = 0.0;
 

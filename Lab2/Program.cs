@@ -14,10 +14,10 @@ namespace Lab2
             // P1.solver();
             // P2.solver();
             // P3.solver();
-            // P4.solver();
+            P4.solver();
             // P5.solver();
             // P6.solver();
-            P7.solver();
+            // P7.solver();
 
             // Word Count:
             // Create a program that counts the number of words in a given text input.

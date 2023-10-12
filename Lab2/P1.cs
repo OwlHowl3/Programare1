@@ -12,7 +12,8 @@ namespace Lab2
         public static void solver()
         {
             Console.Write("Enter an integer: ");
-            int num = Convert.ToInt32(Console.ReadLine());
+            string input = Console.ReadLine();
+            int num = Convert.ToInt32(input);
 
             if (num % 2 == 0)
             {
