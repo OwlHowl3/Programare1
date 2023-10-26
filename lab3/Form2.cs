@@ -24,7 +24,7 @@ namespace lab3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Double a; Double b; Double c; Double d;  Double x1; Double x2;
+            double a; double b; double c; double d;  double x1; double x2;
 
             try
             {
@@ -58,17 +58,25 @@ namespace lab3
 
             //d = b * b - 4 * a * c;
             d = Math.Pow(b, 2) - 4 * a * c;
+
+
             Console.WriteLine(d);
+
             if (d == 0)
             {
-                x1 = x2 = (-b + Math.Sqrt(d)) / 2 * a;
-                MessageBox.Show("There is one solution: " + x1.ToString());
-            } else if (d > 0)
+                x1 = (-b + Math.Sqrt(d)) / 2 * a;
+                MessageBox.Show($"There is one solution: {x1.ToString()}");
+            } 
+            else if (d > 0)
             {
                 x1 = (-b + Math.Sqrt(d)) / (2 * a);
                 x2 = (-b - Math.Sqrt(d)) / (2 * a);
-                MessageBox.Show("There solutions are: " + x1.ToString() + " and " + x2.ToString());
-            } else
+                MessageBox.Show(
+                    "There solutions are: " + x1.ToString() +
+                    " and " + x2.ToString()
+                );
+            }
+            else
             {
                 MessageBox.Show("There are no real solutions");
             }

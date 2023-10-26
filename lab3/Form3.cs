@@ -41,7 +41,10 @@ namespace lab3
                 } 
             }
 
-            Console.WriteLine("Min salary is " + minSalary + " and is present " + countMin + " times.");
+            Console.WriteLine(
+                "Min salary is " + minSalary +
+                " and is present " + countMin + " times."
+            );
 
 
             int maxSalary = salaries[0];
@@ -60,7 +63,10 @@ namespace lab3
                 }
             }
 
-            Console.WriteLine("Max salary is " + maxSalary + " and is present " + countMax + " times.");
+            Console.WriteLine
+                ("Max salary is " + maxSalary + 
+                " and is present " + countMax + " times."
+            );
 
 
             double meanSalary;
@@ -71,7 +77,7 @@ namespace lab3
                 totalSalary += salaries[i];
             }
 
-            meanSalary = (double)totalSalary / (double)salaries.Length;
+            meanSalary = totalSalary / salaries.Length;
 
             Console.WriteLine("Total salary: " + totalSalary);
             Console.WriteLine("Mean salary: " + meanSalary);

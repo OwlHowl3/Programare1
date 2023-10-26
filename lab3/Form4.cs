@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+//using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,7 +54,7 @@ namespace lab3
             // 1. End --------------------------------------------------------------
 
             // 2. Start --------------------------------------------------------------
-            ArrayList indexes = new ArrayList();
+            ArrayList indexes = new ArrayList(); // [3, 6]
             for (int i = 0; i < haystack.Length; i++)
             {
                 if (haystack[i] == needle)
@@ -62,11 +63,11 @@ namespace lab3
                 }
             }
 
-            var sb = new StringBuilder();
+            var sb = new StringBuilder(); // ""
 
             for (int i = 0; i < indexes.Count; i++)
             {
-                sb.Append(indexes[i]);
+                sb.Append(indexes[i]); //   "3,6"
                 if (i != indexes.Count - 1)
                 {
                     sb.Append(",");
