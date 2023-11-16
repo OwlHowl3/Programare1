@@ -30,14 +30,8 @@ namespace lab4
         private void Form2_Load(object sender, EventArgs e)
         {
             int n;
-
-            n = int.Parse(
-                Interaction.InputBox("Type in the number of values")
-            );
-
-
+            n = int.Parse(Interaction.InputBox("Type in the number of values"));
             int[] values = new int[n];
-
             for(int i = 0; i < n; i++)
             {
                 int value = int.Parse(
@@ -45,28 +39,20 @@ namespace lab4
                 );
                 values[i] = value;
             }
-
-            int min; int max;
-            min = int.Parse(
-                Interaction.InputBox("Min value?")
-            );
-            max = int.Parse(
-                Interaction.InputBox("Max value?")
-            );
+            int a; int b;
+            a = int.Parse(Interaction.InputBox("Min value?"));
+            b = int.Parse(Interaction.InputBox("Max value?"));
             int total = 0; int count = 0;
-
             for (int i = 0; i < values.Length; i++)
             {
-                if (values[i] >= min && values[i] <= max)
+                if (values[i] >= a && values[i] <= b)
                 {
                     total += values[i];
                     count++;
                 }
             }
-
-            double mean = (double)total / (double)count;
+            double mean = total / count;
             MessageBox.Show("Mean value between min and max is " + mean);
-
         }
     }
 }

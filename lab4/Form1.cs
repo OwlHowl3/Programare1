@@ -32,16 +32,15 @@ namespace lab4
                 { 23, 33, 4, 5, 9},
                 { 6, 9, 42, 1, 0}
             };
-
             int matrixMin; int matrixMax; 
             int matrixTotal = 0; 
             double matrixMean;
 
             matrixMin = matrix[0, 0];
             matrixMax = matrix[0, 0];
-
             for (int row = 0; row < matrix.GetLength(0); row++)
             {
+
                 for (int column = 0; column < matrix.GetLength(1); column++)
                 {
                     if (matrixMin > matrix[row, column])
@@ -58,7 +57,7 @@ namespace lab4
                 }
             }
 
-            matrixMean = (double)matrixTotal / (double)matrix.Length;
+            matrixMean = matrixTotal / matrix.Length;
             Console.WriteLine("Matrix min = " + matrixMin);
             Console.WriteLine("Matrix max = " + matrixMax);
             Console.WriteLine("Matrix total = " + matrixTotal);
@@ -72,7 +71,6 @@ namespace lab4
                 int rowMax = matrix[row, 0]; 
                 int rowTotal = 0; 
                 double rowMean;
-
                 for (int col = 0; col < matrix.GetLength(1); col++)
                 {
                     if (rowMin > matrix[row, col])
@@ -87,7 +85,7 @@ namespace lab4
                     rowTotal += matrix[row, col];
                 }
 
-                rowMean = (double)rowTotal / (double)matrix.GetLength(1);
+                rowMean = rowTotal / matrix.GetLength(1);
 
                 Console.WriteLine("Row " + row + " min = " + rowMin);
                 Console.WriteLine("Row " + row + " max = " + rowMax);

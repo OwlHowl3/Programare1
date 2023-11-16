@@ -86,68 +86,62 @@ namespace lab3
             // 2. End --------------------------------------------------------------
             
             // 3. Start --------------------------------------------------------------
-            int[] haystack2 = { 4, 8, 15, 16, 23, 42 };
-            int needle2 = 13;
+            int[] vector = { 5, 8, 15, 16, 23, 42 };
+            int value = 13;
 
-            int index2 = -1;
-            for (int i = 0; i < haystack2.Length; i++)
+            int foundIndex = -1;
+            for (int i = 0; i < vector.Length; i++)
             {
-                if (haystack2[i] == needle2)
+                if (vector[i] == value)
                 {
-                    index2 = i;
+                    foundIndex = i;
                     break;
                 }
-                if (haystack2[i] > needle2)
+                if (vector[i] > value)
                 {
                     break;
                 }
             }
-
-            if (index2 == -1)
+            if (foundIndex == -1)
             {
                 Console.WriteLine("Element not found");
             } else
             {
-                Console.WriteLine("Element found at index: " + index2);
+                Console.WriteLine($"Element found at index:{foundIndex}");
             }
             // 3. End --------------------------------------------------------------
 
             // 4. Start --------------------------------------------------------------
-            int[] vector4 = { 4, 8, 15, 16, 23, 42, 51, 61, 88 };
-            int valoareCautata4 = 61;
-
-            int stanga = 0;
-            int dreapta = vector4.Length - 1;
-           
-            int index4 = -1;
-
-            while (stanga < dreapta)
+            int[] vector2 = { 4, 8, 15, 16, 23, 42, 51, 61, 88 };
+            int value2 = 61;
+            int leftIndex = 0;
+            int rightIndex = vector2.Length - 1; 
+            int foundIndex2 = -1;
+            while (leftIndex <= rightIndex)
             {
-                int mijloc = stanga + (dreapta - stanga) / 2;
-                //			int middle = (dreapta + stanga) /2;
-
-                if (vector4[mijloc] == valoareCautata4)
+                int mid = leftIndex + (rightIndex - leftIndex) / 2;
+                // int middle = (dreapta + stanga) /2;
+                if (vector2[mid] == value2)
                 {
-                    index4 = mijloc;
+                    foundIndex2 = mid;
                     break;
                 }
-
-                if (valoareCautata4 > vector4[mijloc])
+                if (value2 > vector2[mid])
                 {
-                    stanga = mijloc + 1;
+                    leftIndex = mid + 1;
                 }
                 else
                 {
-                    dreapta = mijloc - 1;
+                    rightIndex = mid - 1;
                 }
             }
 
-            if (index4 == -1)
+            if (foundIndex2 == -1)
             {
                 Console.WriteLine("Element not found");
             } else
             {
-                Console.WriteLine("Element found at index " + index4);
+                Console.WriteLine("Element found at index " + foundIndex2);
             }
             // 4. End --------------------------------------------------------------
         }
