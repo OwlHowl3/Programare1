@@ -7,33 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace lab8
 {
-    public partial class Form1 : Form
+    public partial class Form3 : Form
     {
-        // defineste o valoarea string campus la nivelul formularului
-
-        // la incarcarea formularului debifeaza chechboxul "Needs accomodation"
-        // si ascunde grupul de campsuri
-
-        // la bifarea "Needs Accomodation" arata grupul de campusuri,
-        // selecteaza prima varianta si seteaza valoarea pentru 'campus'
-
-        // la debifarea acestuia se ascunde grupul de campusuri 
-        // si se reseteaza 'campus'
-        
-        // la selectarea oricarui radio button se seteaza 'campus'
-
-        // la click pe buton se preiau valorile din inputuri
-        // se calculeaza bursa si se afiseaza totul in label
-
         string campus;
 
-        public Form1()
+        public Form3()
         {
             InitializeComponent();
+        }
+
+        private void Form3_Load(object sender, EventArgs e)
+        {
+            checkBoxAccomodation.CheckState = CheckState.Unchecked;
+            groupBoxCampus.Visible = false;
         }
 
         private void buttonInfo_Click(object sender, EventArgs e)
@@ -41,19 +30,17 @@ namespace lab8
             string firstname = textBoxFirstName.Text;
             string lastname = textBoxLastName.Text;
             string locality = textBoxLocality.Text;
+            string accomodation;
+            string transport;
             double gpa;
             double scolarship;
 
-            string accomodation;
-            string transport;
-
-
             try
             {
-                gpa = Double.Parse(textBoxGpa.Text);
+                gpa = Double.Parse(textBoxGPA.Text);
             }
             catch (Exception ex)
-            {
+            {s
                 MessageBox.Show("Gpa should be a number");
                 return;
             }
@@ -61,13 +48,16 @@ namespace lab8
             if (gpa < 8.5)
             {
                 scolarship = 0;
-            } else if (gpa <= 9)
+            }
+            else if (gpa <= 9)
             {
                 scolarship = 400;
-            } else if (gpa <= 9.5)
+            }
+            else if (gpa <= 9.5)
             {
                 scolarship = 550;
-            } else
+            }
+            else
             {
                 scolarship = 700;
             }
@@ -75,7 +65,8 @@ namespace lab8
             if (checkBoxAccomodation.Checked == true)
             {
                 accomodation = "Needs accomodation in campus";
-            } else
+            }
+            else
             {
                 accomodation = "Does not need accomodation in campus";
             }
@@ -89,16 +80,11 @@ namespace lab8
                 transport = "Does not need transport facility";
             }
 
-
-            labelInfo.Text = "Student " + firstname + " " + lastname + " from " + locality +
-                " has a scolarship of " + scolarship + " euros. " + "\n" + accomodation + " " + campus +
+            labelInfo.Text = "Student " + firstname + " " + lastname +
+                " from " + locality +
+                " has a scolarship of " + scolarship + " euros. " + 
+                "\n" + accomodation + " " + campus +
                 "\n" + transport;
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            checkBoxAccomodation.CheckState = CheckState.Unchecked;
-            groupBoxCampus.Visible = false;
         }
 
         private void checkBoxAccomodation_CheckedChanged(object sender, EventArgs e)
@@ -108,7 +94,8 @@ namespace lab8
                 groupBoxCampus.Visible = true;
                 radioButtonTituMaiorescu.Checked = true;
                 campus = "Titu Maiorescu";
-            } else
+            }
+            else
             {
                 groupBoxCampus.Visible = false;
                 campus = "";
